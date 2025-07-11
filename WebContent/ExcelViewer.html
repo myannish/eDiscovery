@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ONLYOFFICE DOCX Viewer</title>
+  <script type="text/javascript" src="http://localhost:8000/web-apps/apps/api/documents/api.js"></script>
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  #placeholder {
+    width: 100%;
+    height: 100vh; /* Full vertical height of viewport */
+  }
+</style>
+
+</head>
+<body>
+  <h2>DOCX Viewer</h2>
+  <div id="placeholder" style="width: 100%; height: 800px;"></div>
+
+  <script type="text/javascript">
+    var docEditor = new DocsAPI.DocEditor("placeholder", {
+  document: {
+    fileType: "xlsx",
+    key: "excel-key-" + Date.now(),
+    title: "SomeCalculations.xlsx",
+	url: "https://38410324d530.ngrok-free.app/nativeViewer/docs/SomeCalculations.xlsx"
+
+  },
+  documentType: "cell",
+  editorConfig: {
+    mode: "view",
+    lang: "en"
+  },
+  width: "100%",
+  height: "100%"
+});
+  </script>
+</body>
+</html>
